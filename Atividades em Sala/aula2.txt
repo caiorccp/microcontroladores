@@ -1,0 +1,28 @@
+1 barramento de dados e de endereço:
+
+o da dados é escrito na memoria e lido , processado pela CPU, ja o de endereço apenas é escrito na memoria e pode ter mais bits que o barramento de dados,
+
+
+2 memoria RAM é uma memoria volátil, os dados são perdidos quando há o corte da energia, é ocorre de maneira mais rapida qua a memoria ROM. Essa que não é volatil e comsegue guardas seus dados quando acaba sua energia.
+
+3 na memoria rom , poe que uma vez desligado o programa os dados dados a ele anteriormente são perdido e o programa recomeça do inicio.
+
+4 a arquiterura harvard permite a leitura simultanea de dados e programas. os barramentos são otimizados e separados e guarda dados na memoria constantemente. usado para programas mais complexos, quanto a programas mais simples demora mais que outras arquiteturas a processar.
+
+a arquiterura neumann é mais simples e menos eficiente, usada para programa com poucos comandos, sendo processados mais rapidos.
+
+5     0x8051ABCD
+a. em little-endian:
+0x0200  armazena 0xCD
+0x0201  armazena 0xAB
+0x0202  armazena 0x51
+0x0203  armazena 0x80
+
+b. em big-endian:
+0x0200  armazena 0x80
+0x0201  armazena 0x51
+0x0202  armazena 0xAB
+0x0203  armazena 0xCD
+
+
+6 as variaveis são dividas e somadas separadamente, e fazendo uso da flag c, o overflow das somas das divisões é considerado.
