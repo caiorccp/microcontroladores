@@ -1,15 +1,15 @@
 Data: 24/03/2017
 
-Para todas as questıes, considere que as vari·veis 'f', 'g', 'h', 'i' e 'j' s„o do tipo inteiro (16 bits na arquitetura do MSP430), e que o vetor 'A[]' È do tipo inteiro. Estas vari·veis est„o armazenadas nos seguintes registradores:
+Para todas as quest√µes, considere que as vari√°veis 'f', 'g', 'h', 'i' e 'j' s√£o do tipo inteiro (16 bits na arquitetura do MSP430), e que o vetor 'A[]' √© do tipo inteiro. Estas vari√°veis est√£o armazenadas nos seguintes registradores:
 	f: R4
 	g: R5
 	h: R6
 	i: R7
 	j: R8
 	A: R9
-Utilize os registradores R11, R12, R13, R14 e R15 para armazenar valores tempor·rios.
+Utilize os registradores R11, R12, R13, R14 e R15 para armazenar valores tempor√°rios.
 
-1. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruÁıes: mov.w, add.w e sub.w.
+1. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instru√ß√µes: mov.w, add.w e sub.w.
 	(a) f = 0;
 CLR #0,R4
 	(b) g++;
@@ -21,7 +21,7 @@ ADD R7,R7,2
 	(e) j -= 2;
 SUB R8,R8,2
 
-2. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruÁıes: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
+2. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instru√ß√µes: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
 	(a) f = 0;
 MOV R4
 	(b) g++;
@@ -33,11 +33,31 @@ INCD R7
 	(e) j -= 2;
 DECD R8
 
-3. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruÁıes: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
+3. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instru√ß√µes: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
 	(a) f *= 2;
+ADD R4,R4,R4
 
 	(b) g *= 3;
+ADD R5,R5,R15
+ADD R15,R5,R5
 	(c) h *= 4;
+ADD R5,R5,R16
+ADD R5,R5,R15
+ADD R16,R15,R5
 	(d) A[2] = A[1] + A[0];
+MOV 2(R9),R11
+MOV 0(R9),R12
+ADD R11,R12,4(R9)
+
 	(e) A[3] = 2*f - 4*h;
+ADD R4,R4,R14
+ADD R6,R6,R15
+ADD R15,R15,R15
+SUB R14,R15,R14
+MOV R14,6(R9)
+
 	(f) A[3] = 2*(f - 2*h);
+ADD R6,R6,R14
+SUB R4,R6,R15
+ADD R15,R15,R15
+MUV R15,6(R9)
