@@ -1,0 +1,80 @@
+unsigned int mult_unsigned2(unsigned in a,
+                            unsigned int b);
+
+ 
+{
+unsined int i,c=0;
+for (i=1,i<=b,i++)
+  c=c+a;
+  return c;
+}
+
+assembly
+mov r14,a
+mov r15,b
+
+
+    clr r13
+    mov 01,r12
+for:cmp r12,r14
+    jl end
+    add r15,r13
+    inc r12
+    jmp for
+end:mov r13,r15
+    ret
+
+int potencia (intx,int n)
+
+{
+int sign=0,p=1;
+if(n<0)
+{ n=-n;
+sing=1;
+}
+while(n>0)
+{
+p=mult-unsigned(x,p0;
+n--;
+}
+if (sign==1)
+return div_signal(1,p);
+else 
+return p;
+}
+
+
+asssembly
+
+	   push r4
+	   push r5
+	   clr r4
+	   mov 01,r5
+	   cmp 01,r14
+	   jl while_pot
+	   inv r14
+	   inc r14
+	   moc 01,r14
+while_pot: tst r14
+           jz while_end
+           push r15
+           push r14
+           mov r5,r14
+           call mult_sinned
+           mov r15,r5
+           pop r14
+           pop r15
+           dec r14
+           jmp while_pot
+while_end: cmp 01,R4
+           jne end
+           mov 00,r15
+           mov r5,r14
+           call div_signed
+           pop r5
+           pop r4
+           ret
+end:       mov r5,r15
+           pop r5
+           pop r4
+           ret 
